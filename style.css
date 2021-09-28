@@ -23,12 +23,7 @@ body {
     background-position: left;
 }
 
-#ask-joke {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.ask-joke-container, .show-joke-container {
+.show-joke-container {
     margin: .5rem 2rem;
     padding: .5rem 2rem;
     background: mediumblue;

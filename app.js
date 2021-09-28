@@ -1,4 +1,3 @@
-const askJoke = document.querySelector("#ask-joke")
 const btnGetJoke = document.querySelector("#btn-get-joke")
 const showJoke = document.querySelector("#show-joke")
 
@@ -9,13 +8,11 @@ function errorHandler(){
 }
 
 function getJokeHandler(e){
-    fetch('https://official-joke-api.appspot.com/jokes/programming/random')
-    .then(Response => Response.json())
+    fetch('https://icanhazdadjoke.com/slack')
+    .then(response => response.json())
     .then(data => {
-        var getSetup = data[0].setup;
-        var getPunchline = data[0].punchline;
-        askJoke.innerText = getSetup;
-        showJoke.innerText = getPunchline;
+        var joke = data.attachments[0].text;
+        showJoke.innerText = joke;
     })
     .catch(errorHandler)
 }
